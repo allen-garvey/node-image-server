@@ -12,7 +12,7 @@ if(!IMAGE_DIR){
 const app = express();
 const port = 3000;
 
-app.use('/images', express.static(IMAGE_DIR), serveIndex(IMAGE_DIR, {'icons': true, 'view': 'details'}));
+app.use('/images', express.static(IMAGE_DIR), serveIndex(IMAGE_DIR, {'icons': true}));
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
