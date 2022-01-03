@@ -1,0 +1,32 @@
+html {
+    font-size: 20px;
+    padding-bottom: 20rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#files {
+    li {
+        margin-bottom: 2rem;
+    }
+
+    .size, .date {
+        display: none;
+    }
+
+    img {
+        display: inline-block;
+        margin: 0 1rem 0 0;
+        max-height: 200px;
+        transition: max-height 0.3s;
+    }
+
+    li:hover {
+        img {
+            max-height: 500px;
+        }
+    }
+}

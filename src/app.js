@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const serveIndex = require('serve-index');
 
@@ -12,11 +13,15 @@ if(!IMAGE_DIR){
 const app = express();
 const port = 3000;
 
-app.use('/images', express.static(IMAGE_DIR), serveIndex(IMAGE_DIR, {'icons': true}));
+app.use(
+  express.static(IMAGE_DIR),
+  serveIndex(IMAGE_DIR, {icons: true, template: path.join(__dirname, 'views', 'index.html')})
+);
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use(
+  '/assets',
+  express.static(path.join(__dirname, '..', 'public', 'assets')),
+);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
