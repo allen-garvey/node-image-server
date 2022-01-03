@@ -29,4 +29,21 @@ html {
             max-height: 500px;
         }
     }
+
+    .icon-directory {
+        font-size: 1.5rem;
+
+        .name:before {
+            content: '';
+            display: inline-block;
+            height: 1em;
+            width: 46px;
+            background-position: bottom;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url('/icons/folder.png');
+            position: relative;
+            bottom: -5px;
+        }
+    }
 }
