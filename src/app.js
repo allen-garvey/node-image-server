@@ -2,6 +2,7 @@ require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const serveIndex = require('serve-index');
+const open = require('open');
 
 const IMAGE_DIR = process.env.IMAGE_DIR;
 
@@ -24,5 +25,10 @@ app.use(
 );
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  const url = `http://localhost:${port}`;
+  console.log(`Example app listening at ${url}`);
+
+  if(process.env.NODE_ENV !== 'production'){
+    open(url);
+  }
 });
