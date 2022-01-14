@@ -30,6 +30,7 @@ html {
     img {
         display: inline-block;
         margin: 0 1rem 0 0;
+        min-height: 100px;
         max-height: 200px;
         transition: max-height 0.3s;
     }
